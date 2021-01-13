@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Express</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1>編集</h1>
+    <form action="/update/<%=item.id%>" method="POST">
+      <input value="<%=item.name%>" type="text" name="item">
+      <input type="submit" value="編集">
+    </form>
+    <a href="/">トップ</a>
+    <a href="/index">一覧を見る</a>
+  </body>
+</html>

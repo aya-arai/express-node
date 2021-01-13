@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Express</title>
+  </head>
+  <body>
+    <h1>Hello, index page!!</h1>
+    <p>MySQLのデータを参照</p>
+    <% items.forEach((item)=>{ %>
+    <li>
+      <span><%= item.id %></span>
+      <span><%= item.name %></span>
+      <form action="/delete/<%=item.id%>" method="POST">
+        <input type="submit" value="削除">
+      </form>
+      <a href="/edit/<%=item.id%>"><button>編集</button></a>
+    </li>
+    <% }); %>
+  </body>
+</html>

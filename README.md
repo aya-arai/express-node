@@ -5,5 +5,5 @@ node.jsでTodoリストを作ってみる
 node app.js
 
 # portがalreadyの時はこれを実行
-lsof -i:3000
-kill -9 PID 
+* lsof -i:3000
+* kill -9 PID 

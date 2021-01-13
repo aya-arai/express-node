@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <title>Express</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+    <title>ExpressTodoリスト</title>
   </head>
   <body>
-    <h1>Hello, Express!!</h1>
-    <a href="/index">一覧を見る</a>
-    <a href="/new">新規追加</a>
+    <header>
+      <!-- Image and text -->
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+          <img src="./images/bootstrap-logo.png" alt="" width="30" height="28" class="d-inline-block align-top">
+            Node.jsでToDoリストを作ってみた
+          </a>
+        </div>
+      </nav>
+    </header>
+    <div class="container mt-4">
+      <h3>リスト一覧</h3>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <a href="/index">一覧を見る</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/new">新規追加</a>
+        </li>
+      </ul>
+    </div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
   </body>
 </html>

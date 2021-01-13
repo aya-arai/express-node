@@ -1,22 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <title>Express</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+    <title>ExpressTodoリスト</title>
   </head>
   <body>
-    <h1>Hello, index page!!</h1>
-    <p>MySQLのデータを参照</p>
-    <% items.forEach((item)=>{ %>
-    <li>
-      <span><%= item.id %></span>
-      <span><%= item.name %></span>
-      <form action="/delete/<%=item.id%>" method="POST">
-        <input type="submit" value="削除">
-      </form>
-      <a href="/edit/<%=item.id%>"><button>編集</button></a>
-    </li>
-    <% }); %>
+    <header>
+      <!-- Image and text -->
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+          <img src="./images/bootstrap-logo.png" alt="" width="30" height="28" class="d-inline-block align-top">
+            Node.jsでToDoリストを作ってみた
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container mt-4">
+      <h1>MySQLのデータから参照</h1>
+      
+      <a class="btn btn-primary" href="/new">新規追加</a>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">名前</th>
+            <th scope="col">処理</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% items.forEach((item)=>{ %>
+          <tr>
+
+            <th scope="row">
+              <p class="fs-4"><%= item.id %></p>
+            </th>
+            <td> 
+              <p class="fs-4"><%= item.name %></p>
+            </td>
+            <td>
+              <div class="btn-group" role="group" aria-label="sample">
+                <a class="mr-2 btn btn-info" href="/edit/<%=item.id%>">
+                  編集
+                </a>
+                <form action="/delete/<%=item.id%>" method="POST">
+                  <input class="btn btn-danger" type="submit" value="削除">
+                </form>
+              </div>
+            </td>
+            
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      
+    </div>
+    
   </body>
 </html>
